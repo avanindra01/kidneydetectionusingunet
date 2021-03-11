@@ -23,11 +23,15 @@ The paper uses binary cross entropy as its metric and a weight matrix that highl
 The objects were quite big vs. 256 pixels so I shrunk the images by half this allowed for more accurate mask identification as the masks are more findable in situ. I also tested 1/4 shrunk images but found them to end with lower accuracies.
 
 Many of the images were of wildly intensities so I added a normalization step to my generator. Conceptually it probably would make more sense to normalize the whole images, but that would have required a lot of finagling to realign the images to 0-255 so I took the easy way out.
-![u-net-architecture](https://user-images.githubusercontent.com/3740610/110843422-20469c80-825d-11eb-865b-8027fe1fe15c.png)
+![](varying_intensities.PNG)
 
 # Outcome
 
-On my validation set I was hitting 75%. There are a few reasons for this; the first that accounts for probably about 5% of the issue is that my mask is more accurate. This makes sense as humans are going to be somewhat limited in their ability to label images. The other, perhaps larger issue is that masks are often clipped on the edges; this makes it so that I often am not seeing the full glomeruli in situ. This could possibly be fixed by using some kind of sliding window and consensus system.
+On my validation set I was hitting 75%. There are a few reasons for this; the first that accounts for probably about 5% of the issue is that my mask is more accurate. This makes sense as humans are going to be somewhat limited in their ability to label images. 
 
-![u-net-architecture](https://user-images.githubusercontent.com/3740610/110843422-20469c80-825d-11eb-865b-8027fe1fe15c.png)
+![](https://github.com/cdcox/Unet-for-kidney-detection/blob/main/mymaskvstheirs.png)
+
+The other, perhaps larger issue is that masks are often clipped on the edges; this makes it so that I often am not seeing the full glomeruli in situ. This could possibly be fixed by using some kind of sliding window and consensus system.
+
+![](test_img.png)
 
