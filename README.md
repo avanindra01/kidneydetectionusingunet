@@ -1,3 +1,4 @@
+![u-net-architecture](https://user-images.githubusercontent.com/3740610/110843422-20469c80-825d-11eb-865b-8027fe1fe15c.png)
 ## Unet for kidney detection-semantic segmentation
 
 
